@@ -1,0 +1,78 @@
+.modal__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.modal__hr--first {
+	border-top: 1px solid rgb(219, 219, 219);
+}
+
+.modal__close {
+	cursor: pointer;
+	color: rgb(180, 34, 34);
+}
+
+.modal__close:hover {
+	color: rgb(255, 0, 0);
+}
+
+.modal__form {
+	padding: 10px;
+}
+
+.modal__container {
+	display: flex;
+	flex-direction: column;
+	margin: 5px 0px;
+}
+
+.modal__label {
+	margin: 10px 0px;
+}
+
+.modal__input {
+	border: 1px solid rgb(219, 219, 219);
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 16px;
+	outline: transparent;
+	transition: border 0.2s;
+}
+
+.modal__input:focus,
+.modal__input:focus-within {
+	border: 1px solid #80bdff;
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.modal__hr {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-top: 1px solid rgb(219, 219, 219);
+}
+
+.modal__small {
+	color: rgb(165, 164, 164);
+	margin: 5px;
+}
+
+.modal__button {
+	padding: 10px;
+	border: 1px solid #058e3f;
+	width: 100%;
+	background-color: transparent;
+	transition: background-color 0.3s;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.modal__button:hover {
+	background-color: #4bb543;
+}
+
+.modal__button .fa-save {
+	color: #058e3f;
+	font-size: 15px;
+}

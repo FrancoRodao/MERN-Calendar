@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+button {
+	cursor: pointer;
+	outline: none;
+}
+
+button:focus,
+input:focus {
+	outline: none;
+}
+
+/* datapicker */
+.react-datetime-picker__wrapper {
+	border: none;
+}
+.react-datetime-picker__inputGroup__amPm {
+	outline: transparent;
+}
+/* datapicker */
+
+/* FULL CALENDAR */
+
+:root {
+	--fc-list-event-hover-bg-color: transparent;
+}
+
+.fc-h-event {
+	background-color: #2a6bb5;
+	border: medium solid transparent;
+}
+
+.fc-v-event {
+	background-color: #2a6bb5;
+}
+
+.fc-daygrid-event-dot {
+	border-color: #0ac200;
+}
+
+.fc-button {
+	padding: 0.5rem 1.1rem !important;
+	font-size: 0.875rem !important;
+	line-height: 1.5 !important;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.fc-button,
+.fc-button-primary {
+	color: #fff !important;
+	background-color: #4582ec !important;
+	border-color: #4582ec !important;
+}
+
+.fc-button-active,
+.fc-button:hover {
+	background-color: #1863e6 !important;
+	border-color: #165edb !important;
+}
+
+.fc-prev-button {
+	margin-right: 5px !important;
+}
+
+.fc-next-button {
+	margin-left: 5px !important;
+}
+
+.selectedEvent,
+.selectedEvent:hover {
+	background-color: #0093fc;
+	transition: 0.2s;
+	z-index: 99999 !important;
+}
+
+/* FULL CALENDAR */
+
+/* UTILS */
+.opacity-0 {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s, visibility 0.3s;
+}
+.opacity-1 {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.3s, visibility 0.3s;
+}
+/* UTILS */

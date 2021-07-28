@@ -1,0 +1,10 @@
+.calendar__root {
+	overflow-y: scroll;
+	height: 100%;
+}
+
+.calendar__wrapper {
+	min-width: 700px;
+	min-height: 500px;
+	height: 100%;
+}

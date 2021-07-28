@@ -1,0 +1,240 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "mern-calendar",
+  "dateExported": "2021-07-05T05:12:03.992Z",
+  "version": "1.1",
+  "folders": [
+    {
+      "containerId": "",
+      "sortNum": 10000,
+      "name": "auth",
+      "_id": "cba3bd70-3e04-4150-8025-fb06aa199dea",
+      "created": "2021-06-18T15:31:13.009Z"
+    },
+    {
+      "containerId": "",
+      "sortNum": 20000,
+      "name": "events",
+      "_id": "4f2ce0d6-19fb-416a-9af4-8e5bc83ab513",
+      "created": "2021-06-22T17:31:04.796Z"
+    }
+  ],
+  "requests": [
+    {
+      "containerId": "cba3bd70-3e04-4150-8025-fb06aa199dea",
+      "sortNum": 10000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "b3514f79-7275-4250-92cf-6391a3b3489e",
+      "name": "login",
+      "url": "localhost:3000/api/auth/login",
+      "method": "POST",
+      "modified": "2021-07-01T02:34:28.874Z",
+      "created": "2021-06-18T15:30:07.362Z",
+      "_id": "314808e6-8f92-42ee-953d-315383796d1f",
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"email\": \"email\",\n    \"password\": \"password\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "containerId": "cba3bd70-3e04-4150-8025-fb06aa199dea",
+      "sortNum": 20000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "b3514f79-7275-4250-92cf-6391a3b3489e",
+      "name": "register",
+      "url": "localhost:3000/api/auth/register",
+      "method": "POST",
+      "modified": "2021-06-24T01:50:42.901Z",
+      "created": "2021-06-18T15:31:55.353Z",
+      "_id": "3796ce30-e715-4cb8-97ce-d444fdc253bc",
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"name\": \"franco\",\n    \"email\": \"email\",\n    \"password\": \"password\"\n}"
+      },
+      "tests": []
+    },
+    {
+      "containerId": "cba3bd70-3e04-4150-8025-fb06aa199dea",
+      "sortNum": 30000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        },
+        {
+          "name": "Cookie",
+          "value": "refreshTokenCookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQyMWUzYzczY2FjOTMzNjRjOWU1N2QiLCJuYW1lIjoiZnJhbmNvIiwiaWF0IjoxNjI0NTc3MjQ2LCJleHAiOjE2MjcxNjkyNDZ9.PSWxfUvWEOY2KOHErQ4T-RWMxzDuV4AcvX-VIC2ZNUQ"
+        }
+      ],
+      "colId": "b3514f79-7275-4250-92cf-6391a3b3489e",
+      "name": "renewToken",
+      "url": "localhost:3000/api/auth/renewToken",
+      "method": "GET",
+      "modified": "2021-06-24T23:31:33.926Z",
+      "created": "2021-06-18T15:32:07.673Z",
+      "_id": "a897bf09-9fe3-4928-89b0-c8559a532433",
+      "tests": []
+    },
+    {
+      "containerId": "cba3bd70-3e04-4150-8025-fb06aa199dea",
+      "sortNum": 40000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        },
+        {
+          "name": "Cookie",
+          "value": "refreshTokenCookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQyMWUzYzczY2FjOTMzNjRjOWU1N2QiLCJuYW1lIjoiZnJhbmNvIiwiaWF0IjoxNjI0NDk5MDI3LCJleHAiOjE2MjcwOTEwMjd9.j3x2RafinqeblvRJD-EZALzDoEtJRRR7hh2KrB1RU7I"
+        }
+      ],
+      "colId": "b3514f79-7275-4250-92cf-6391a3b3489e",
+      "name": "logout",
+      "url": "localhost:3000/api/auth/logout",
+      "method": "DELETE",
+      "modified": "2021-06-24T01:50:12.774Z",
+      "created": "2021-06-21T20:38:12.720Z",
+      "_id": "ed672d9c-d5be-4314-a561-139a91739df2",
+      "tests": []
+    },
+    {
+      "containerId": "4f2ce0d6-19fb-416a-9af4-8e5bc83ab513",
+      "sortNum": 50000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        },
+        { "name": "Authorization", "value": "" }
+      ],
+      "colId": "b3514f79-7275-4250-92cf-6391a3b3489e",
+      "name": "getAllEvents",
+      "url": "localhost:3000/api/events/all",
+      "method": "GET",
+      "modified": "2021-06-24T02:16:50.908Z",
+      "created": "2021-06-22T17:31:18.202Z",
+      "_id": "a46b662e-16a5-4e8b-8e32-9161765df3c2",
+      "tests": []
+    },
+    {
+      "containerId": "4f2ce0d6-19fb-416a-9af4-8e5bc83ab513",
+      "sortNum": 60000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "b3514f79-7275-4250-92cf-6391a3b3489e",
+      "name": "createEvent",
+      "url": "localhost:3000/api/events",
+      "method": "POST",
+      "modified": "2021-07-01T02:34:38.295Z",
+      "created": "2021-06-22T17:51:36.956Z",
+      "_id": "5bbe7ae3-5980-499d-a8a5-904ea681c735",
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"title\": \"titulo numero 3\",\n    \"notes\": [\"a\"],\n    \"startDate\": \"1624384591990\",\n    \"endDate\": \"1624384591990\"\n}",
+        "form": []
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQyMWUzYzczY2FjOTMzNjRjOWU1N2QiLCJuYW1lIjoiZnJhbmNvIiwiaWF0IjoxNjI1MTA2ODY4LCJleHAiOjE2MjUxMDY5Mjh9.BazRzERFIcN5VVG0mGm6eMzQrMLMvjCYkHFYyAuU17Q"
+      },
+      "tests": []
+    },
+    {
+      "containerId": "4f2ce0d6-19fb-416a-9af4-8e5bc83ab513",
+      "sortNum": 70000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "b3514f79-7275-4250-92cf-6391a3b3489e",
+      "name": "getEvent",
+      "url": "localhost:3000/api/events/60d22499e2aadf34f08ae625",
+      "method": "GET",
+      "modified": "2021-06-24T23:31:41.206Z",
+      "created": "2021-06-24T23:22:40.699Z",
+      "_id": "f3555eb2-326d-46bf-89a7-d81506ee9152",
+      "auth": {
+        "type": "bearer",
+        "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQyMWUzYzczY2FjOTMzNjRjOWU1N2QiLCJuYW1lIjoiZnJhbmNvIiwiaWF0IjoxNjI0NTc3NDkzLCJleHAiOjE2MjQ1Nzc1NTN9.ieDtcvooq7ogLyMrgLwNIaewZvLpmAULVzbSGyYVzoQ"
+      },
+      "tests": []
+    },
+    {
+      "containerId": "4f2ce0d6-19fb-416a-9af4-8e5bc83ab513",
+      "sortNum": 80000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "b3514f79-7275-4250-92cf-6391a3b3489e",
+      "name": "deleteEvent",
+      "url": "localhost:3000/api/events/60d224b6e2aadf34f08ae62b",
+      "method": "DELETE",
+      "modified": "2021-06-24T23:40:45.008Z",
+      "created": "2021-06-24T23:35:44.406Z",
+      "_id": "5a2cb6c6-f70b-44e7-a894-73f0462bdb47",
+      "auth": {
+        "type": "bearer",
+        "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQyMWUzYzczY2FjOTMzNjRjOWU1N2QiLCJuYW1lIjoiZnJhbmNvIiwiaWF0IjoxNjI0NTc3NzM1LCJleHAiOjE2MjcxNjk3MzV9.U3dNrtPjq-kUmbKgvet-FgaW17iHweMxkwJYwRj1n7E"
+      },
+      "tests": []
+    },
+    {
+      "containerId": "4f2ce0d6-19fb-416a-9af4-8e5bc83ab513",
+      "sortNum": 90000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "b3514f79-7275-4250-92cf-6391a3b3489e",
+      "name": "editEvent",
+      "url": "localhost:3000/api/events/60d224d841f6a52e8820514e",
+      "method": "PUT",
+      "modified": "2021-06-25T00:08:49.832Z",
+      "created": "2021-06-24T23:48:53.586Z",
+      "_id": "208b846c-76ef-4b9f-b616-5428375ac6f1",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"titulo editado232\",\n  \"notes\": [\"kaa\"],\n  \"startDate\": \"2021-06-22T17:56:31.990Z\",\n  \"endDate\": \"2021-06-22T17:56:31.990Z\"\n}"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQyMWUzYzczY2FjOTMzNjRjOWU1N2QiLCJuYW1lIjoiZnJhbmNvIiwiaWF0IjoxNjI0NTc5NjgxLCJleHAiOjE2MjQ1Nzk3NDF9.KQC0lFB_dczUMUh8maQFtM047cK4ANwEXR2r1XOmZQM"
+      },
+      "tests": []
+    }
+  ]
+}
