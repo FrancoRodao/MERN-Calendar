@@ -1,11 +1,17 @@
 {
-	"name": "root",
-	"private": true,
+	"name": "mern-calendar",
+	"private": "true",
+	"version": "0.0.1",
+	"workspaces": [
+		"backend",
+		"client"
+	],
 	"scripts": {
-		"client:dev": "cd ./packages/client & npm run dev",
-		"backend:dev": "cd ./packages/backend & npm run dev"
+		"client:dev": "npm run dev --workspace=client",
+		"backend:dev": "npm run dev --workspace=backend"
 	},
-	"devDependencies": {
-		"lerna": "^4.0.0"
+	"license": "ISC",
+	"engines": {
+		"npm": "7.9.0"
 	}
 }

@@ -1,5 +1,6 @@
 {
 	"name": "calendar-backend",
+	"private": "true",
 	"version": "0.0.1",
 	"description": "backend of mern-calendar",
 	"main": "index.js",
@@ -8,7 +9,6 @@
 		"start": "node src/index.js",
 		"lint": "eslint --fix --ext .js src"
 	},
-	"author": "",
 	"license": "ISC",
 	"devDependencies": {
 		"eslint": "^7.30.0",
