@@ -8,12 +8,15 @@
 	width: 70px;
 	z-index: 10;
 	transition: background-color 0.3s;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .newEventButton {
 	right: 35px;
 	background-color: #0d6efd;
-	border: none;
 }
 .newEventButton:hover {
 	background-color: #0b5ed7;
@@ -23,7 +26,6 @@
 	right: 35px;
 	background-color: #ffa500;
 	color: white;
-	border: none;
 }
 
 .editEventButton:hover {
@@ -33,7 +35,6 @@
 .deleteEventButton {
 	background-color: #dc3545;
 	color: white;
-	border: none;
 	left: 25px;
 }
 .deleteEventButton:hover {
@@ -42,9 +43,14 @@
 
 @media (max-width: 700px) {
 	.newEventButton,
-	.editEventButton {
+	.editEventButton,
+	.deleteEventButton {
 		font-size: 20px;
 		height: 60px;
 		width: 60px;
+	}
+	.newEventButton,
+	.editEventButton {
+		right: 25px;
 	}
 }
