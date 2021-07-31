@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 
 import DateTimePicker from 'react-datetime-picker'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import Modal from '../Modal'
 import { closeModalAction } from '../../redux/actions/uiActions'
@@ -10,74 +10,34 @@ import {
 	startEditEventAction
 } from '../../redux/actions/eventsActions'
 
-import { useForm } from '../../hooks/useForm'
-
 import '../../styles/components/calendar/CalendarModal.css'
+import { useCalendarModal } from '../../hooks/useCalendarModal'
 
 export default function CalendarModal() {
 	const state = useSelector(state => state)
-	const { activeEvent, activeSlot } = state.events
+	const { activeEvent } = state.events
 	const { isModalOpen } = state.ui.modal
 	const dispatch = useDispatch()
 
-	const initFormValues = () => {
-		if (activeEvent) {
-			const { title, start, end, extendedProps } = activeEvent
-			return {
-				title,
-				notes: extendedProps.notes,
-				startDate: start,
-				endDate: end
-			}
-		}
+	const {
+		modalFormValues,
+		modalHandleInputChange,
+		modalStartDateChangeHandler,
+		modalEndDateChangeHandler
+	} = useCalendarModal()
 
-		/*
-			if there is any cell / slot selected when opening the modal 
-			you must use the date of the selected slot
-		*/
-		const now = activeSlot ? new Date(activeSlot.date) : new Date()
-		const nowPlus1 = activeSlot ? new Date(activeSlot.date) : new Date()
-		nowPlus1.setHours(now.getHours() + 1)
-
-		return {
-			title: '',
-			notes: '',
-			startDate: now,
-			endDate: nowPlus1
-		}
-	}
-
-	//change form values when the modal is opened
-	useEffect(() => {
-		setFormValues(initFormValues())
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [isModalOpen])
-
-	const { formValues, handleInputChange, setFormValues } =
-		useForm(initFormValues)
-	const { title, notes } = formValues
+	const { title, notes } = modalFormValues
 
 	const handleSubmitForm = e => {
 		e.preventDefault()
 		if (activeEvent) {
-			dispatch(startEditEventAction(formValues, activeEvent.id))
+			dispatch(startEditEventAction(modalFormValues, activeEvent.id))
 		} else {
-			dispatch(startAddNewEventAction(formValues))
+			dispatch(startAddNewEventAction(modalFormValues))
 		}
 
 		dispatch(closeModalAction())
 	}
-
-	const startDateChangeHandler = startDate =>
-		setFormValues({
-			...formValues,
-			startDate
-		})
-	const endDateChangeHandler = endDate =>
-		setFormValues({
-			...formValues,
-			endDate
-		})
 
 	return (
 		<Modal isOpen={isModalOpen}>
@@ -101,8 +61,8 @@ export default function CalendarModal() {
 					<DateTimePicker
 						disableClock={true}
 						clearIcon={null}
-						onChange={startDateChangeHandler}
-						value={formValues.startDate}
+						onChange={modalStartDateChangeHandler}
+						value={modalFormValues.startDate}
 						className="modal__input"
 					/>
 				</div>
@@ -112,9 +72,9 @@ export default function CalendarModal() {
 					<DateTimePicker
 						disableClock={true}
 						clearIcon={null}
-						onChange={endDateChangeHandler}
-						value={formValues.endDate}
-						minDate={formValues.startDate}
+						onChange={modalEndDateChangeHandler}
+						value={modalFormValues.endDate}
+						minDate={modalFormValues.startDate}
 						className="modal__input modal__input--endDate"
 					/>
 				</div>
@@ -129,7 +89,7 @@ export default function CalendarModal() {
 						name="title"
 						autoComplete="off"
 						value={title}
-						onChange={handleInputChange}
+						onChange={modalHandleInputChange}
 						required
 					/>
 					<small className="modal__small">A short description</small>
@@ -143,7 +103,7 @@ export default function CalendarModal() {
 						rows="5"
 						name="notes"
 						value={notes}
-						onChange={handleInputChange}
+						onChange={modalHandleInputChange}
 					></textarea>
 					<small className="modal__small">Additional Information</small>
 				</div>
