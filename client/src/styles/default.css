@@ -87,6 +87,12 @@ input:focus {
 	z-index: 99999 !important;
 }
 
+@media (max-width: 760px) {
+	.fc .fc-toolbar-title {
+		font-size: 23px;
+	}
+}
+
 /* FULL CALENDAR */
 
 /* UTILS */
