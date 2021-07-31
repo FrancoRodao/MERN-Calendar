@@ -73,6 +73,11 @@ input:focus {
 	box-shadow: none;
 }
 
+.fc .fc-button-primary:disabled {
+	background-color: #4582ec;
+	border-color: #4582ec;
+}
+
 .fc .fc-button-primary:hover,
 .fc-button-active {
 	background-color: #1863e6;
