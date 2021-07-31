@@ -20,7 +20,12 @@ export default function Modal({ isOpen, children }) {
 				onClick={closeModal}
 				className={`${styles.modal__container} opacity-${isOpen ? '1' : '0'}`}
 			>
-				<div className={`${styles.modal__dialog}`}>{children}</div>
+				<div
+					onClick={e => e.stopPropagation()}
+					className={`${styles.modal__dialog}`}
+				>
+					{children}
+				</div>
 			</div>
 		</ModalPortal>
 	)

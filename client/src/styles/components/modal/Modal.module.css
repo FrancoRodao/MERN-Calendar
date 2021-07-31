@@ -8,7 +8,7 @@
 	top: 0;
 	left: 0;
 	background-color: rgba(0, 0, 0, 0.75);
-	z-index: 999999;
+	z-index: 10;
 }
 
 .modal__dialog {
@@ -20,6 +20,7 @@
 	width: 70%;
 	height: 90%;
 	overflow: auto;
+	z-index: 11;
 }
 
 @media (max-width: 450px) {

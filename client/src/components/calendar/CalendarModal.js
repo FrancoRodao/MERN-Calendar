@@ -4,7 +4,6 @@ import DateTimePicker from 'react-datetime-picker'
 import React from 'react'
 
 import Modal from '../Modal'
-import { closeModalAction } from '../../redux/actions/uiActions'
 import {
 	startAddNewEventAction,
 	startEditEventAction
@@ -21,6 +20,7 @@ export default function CalendarModal() {
 
 	const {
 		modalFormValues,
+		closeCalendarModal,
 		modalHandleInputChange,
 		modalStartDateChangeHandler,
 		modalEndDateChangeHandler
@@ -36,7 +36,7 @@ export default function CalendarModal() {
 			dispatch(startAddNewEventAction(modalFormValues))
 		}
 
-		dispatch(closeModalAction())
+		closeCalendarModal()
 	}
 
 	return (
@@ -45,12 +45,7 @@ export default function CalendarModal() {
 				<h1 className="modal__headTitle">
 					{activeEvent ? 'Edit Event' : 'New Event'}{' '}
 				</h1>
-				<span
-					onClick={() => {
-						dispatch(closeModalAction())
-					}}
-					className="modal__close"
-				>
+				<span onClick={closeCalendarModal} className="modal__close">
 					<i className="fas fa-times-circle fa-2x"></i>
 				</span>
 			</div>
