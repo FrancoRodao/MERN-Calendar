@@ -112,12 +112,15 @@ export default function CalendarScreen() {
 		})
 	}
 
+	const isMobileDevice = screen.width < 768
+
 	return (
 		<div className="calendar__root">
 			<div className="calendar__wrapper">
 				<NavBar />
 				<div style={{ padding: '10px' }}>
 					<FullCalendar
+						eventLongPressDelay={200}
 						timeZone="local"
 						plugins={[
 							timeGridPlugin,
@@ -141,9 +144,8 @@ export default function CalendarScreen() {
 							meridiem: 'short'
 						}}
 						editable={true}
-						selectable={true}
+						selectable={!isMobileDevice}
 						dateClick={dateClickHandler}
-						allDayText={'All day'}
 						allDaySlot={false}
 						viewDidMount={onViewChangeHandler}
 						headerToolbar={{
@@ -153,7 +155,6 @@ export default function CalendarScreen() {
 						}}
 						unselectAuto={false}
 						//TODO: responsive buttons
-						//TODO: reponsive bug doble click on event
 						//TODO: modal responsive
 					/>
 				</div>

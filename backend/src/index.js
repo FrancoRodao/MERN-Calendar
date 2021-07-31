@@ -4,13 +4,17 @@ const { dbConnection } = require('./database/config')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
 
-const morgan = require('morgan')
 const helmet = require('helmet')
 
 const dotenv = require('dotenv')
 dotenv.config()
 
 const app = express()
+
+if (process.env.NODE_ENV === 'development') {
+	const morgan = require('morgan')
+	app.use(morgan('dev'))
+}
 
 //database
 dbConnection()
@@ -27,8 +31,7 @@ app.use(
 		origin: origins
 	})
 )
-app.use(morgan('dev'))
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 app.use(express.json())
 app.use(cookieParser())
 

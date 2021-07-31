@@ -5,8 +5,8 @@
 	"description": "backend of mern-calendar",
 	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon src/index.js",
-		"start": "node src/index.js",
+		"dev": "cross-env NODE_ENV=development nodemon src/index.js",
+		"start": "cross-env NODE_ENV=production node src/index.js",
 		"lint": "eslint --fix --ext .js src"
 	},
 	"license": "ISC",
@@ -19,6 +19,7 @@
 		"bcrypt": "^5.0.1",
 		"cookie-parser": "^1.4.5",
 		"cors": "^2.8.5",
+		"cross-env": "^7.0.3",
 		"dotenv": "^10.0.0",
 		"express": "^4.17.1",
 		"express-validator": "^6.12.0",
