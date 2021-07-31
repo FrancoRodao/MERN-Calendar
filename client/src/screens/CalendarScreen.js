@@ -154,7 +154,6 @@ export default function CalendarScreen() {
 							end: 'listYear dayGridMonth timeGridWeek dayGridDay'
 						}}
 						unselectAuto={false}
-						//TODO: responsive buttons
 						//TODO: modal responsive
 					/>
 				</div>

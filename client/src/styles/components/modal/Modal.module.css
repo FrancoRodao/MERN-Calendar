@@ -21,3 +21,9 @@
 	height: 90%;
 	overflow: auto;
 }
+
+@media (max-width: 450px) {
+	.modal__dialog {
+		width: 95%;
+	}
+}
