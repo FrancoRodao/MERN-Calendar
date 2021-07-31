@@ -2,17 +2,16 @@ const path = require('path')
 const { merge } = require('webpack-merge')
 const webpackCommon = require('./webpack.common')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 /** @type {import('webpack').Configuration} */
 const webpackProdConfig = {
 	mode: 'production',
-	devtool: 'source-map',
+	devtool: false,
 	output: {
 		path: path.resolve(__dirname, '../dist'),
 		publicPath: '',
 		filename: '[name].[contenthash].js',
-		chunkFilename: '[name].[contenthash].bundle.js',
+		chunkFilename: '[name].[contenthash].js',
 		clean: true
 	},
 	plugins: [
@@ -21,13 +20,22 @@ const webpackProdConfig = {
 			chunkFilename: '[id].[contenthash].css'
 		})
 	],
-	optimization: {
-		minimize: true,
-		splitChunks: {
-			chunks: 'all'
-		},
-		minimizer: [new CssMinimizerPlugin()]
-	},
+	externals: [
+		'react',
+		'redux',
+		'react-redux',
+		'fullcalendar/react',
+		'fullcalendar/daygrid',
+		'fullcalendar/list',
+		'fullcalendar/timegrid',
+		'react-datetime-picker',
+		'axios',
+		'redux',
+		'react-dom',
+		'toastify',
+		'redux-thunk',
+		'thunk'
+	],
 	target: 'browserslist'
 }
 

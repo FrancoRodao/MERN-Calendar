@@ -17,7 +17,10 @@ const styleModuleRegex = /\.module\.(sass|css|scss)$/
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
-	entry: path.resolve(__dirname, '../src/index.js'),
+	entry: {
+		main: path.resolve(__dirname, '../src/index.js')
+	},
+	devtool: 'source-map',
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: 'public/index.html',

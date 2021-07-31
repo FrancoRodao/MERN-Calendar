@@ -4,3 +4,4 @@ dist
 .env.production
 TODO.txt
 .vscode
+stats.json

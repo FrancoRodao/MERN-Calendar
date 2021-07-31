@@ -7,7 +7,8 @@
 	"scripts": {
 		"build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
 		"dev": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
-		"lint": "eslint --fix --ext .js src"
+		"lint": "eslint --fix --ext .js src",
+		"stats": "webpack --config webpack/webpack.prod.js --profile --json > stats.json"
 	},
 	"license": "ISC",
 	"devDependencies": {
@@ -34,6 +35,7 @@
 		"prop-types": "^15.7.2",
 		"style-loader": "^2.0.0",
 		"webpack": "^5.44.0",
+		"webpack-bundle-analyzer": "^4.4.2",
 		"webpack-cli": "^4.7.2",
 		"webpack-dev-server": "^3.11.2",
 		"webpack-merge": "^5.8.0"
