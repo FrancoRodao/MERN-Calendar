@@ -20,6 +20,10 @@ const webpackProdConfig = {
 			chunkFilename: '[id].[contenthash].css'
 		})
 	],
+	resolve: {
+		extensions: ['.js'],
+		modules: ['node_modules']
+	},
 	externals: [
 		'react',
 		'redux',
@@ -36,6 +40,18 @@ const webpackProdConfig = {
 		'redux-thunk',
 		'thunk'
 	],
+	optimization: {
+		minimize: true,
+		splitChunks: {
+			chunks: 'all',
+			minSize: 10000,
+			maxSize: 250000
+		}
+	},
+	performance: {
+		maxEntrypointSize: 512000,
+		maxAssetSize: 512000
+	},
 	target: 'browserslist'
 }
 
