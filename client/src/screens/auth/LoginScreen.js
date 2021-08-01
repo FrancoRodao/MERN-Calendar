@@ -29,7 +29,7 @@ export default function LoginScreen() {
 	return (
 		<div className="auth">
 			<div className="auth__container">
-				{/*error message*/ state && <div> {msg} </div>}
+				{/*error message*/ state && <div className="auth__error"> {msg} </div>}
 
 				<div className="auth__imgContainer">
 					<img src="../../../public/img/candado.png"></img>

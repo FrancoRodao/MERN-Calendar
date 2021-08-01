@@ -12,7 +12,12 @@ export const startLoginAction = (email, password) => {
 				dispatch(loginAction(res.data.user._id, res.data.user.name))
 				localStorage.setItem('accessToken', res.data.accessToken)
 			})
-			.catch(err => err)
+			.catch(err => {
+				if (err.response?.data) {
+					dispatch(setErrorAction(err.response.data.msg))
+				}
+				return err
+			})
 	}
 }
 
@@ -71,7 +76,10 @@ export const startRegisterUser = (name, email, password) => {
 		try {
 			await AuthService.register(name, email, password)
 		} catch (err) {
-			dispatch(setErrorAction(err?.response?.data?.msg || 'unexpected error'))
+			if (err.response?.data) {
+				dispatch(setErrorAction(err.response.data.msg))
+			}
+			return err
 		}
 	}
 }

@@ -9,6 +9,16 @@
 	background-size: cover;
 }
 
+.auth__error {
+	position: absolute;
+	text-align: center;
+	top: 90px;
+	width: 100%;
+	height: 50px;
+	/* margin-bottom: 15px; */
+	color: #d00000;
+}
+
 .auth__container {
 	position: relative;
 	height: 80%;
@@ -25,7 +35,7 @@
 
 .auth__imgContainer {
 	position: absolute;
-	top: 50px;
+	top: 20px;
 	width: 50px;
 	height: 50px;
 }

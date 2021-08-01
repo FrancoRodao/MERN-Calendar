@@ -1,25 +1,33 @@
 import instance from './instance'
 
+const authEndPoints = {
+	login: '/auth/login',
+	register: '/auth/register',
+	logout: '/auth/logout',
+	renewToken: '/auth/renewToken'
+}
+
 const login = (email, password) =>
-	instance.post('/auth/login', {
+	instance.post(authEndPoints.login, {
 		email,
 		password
 	})
 
 const register = (name, email, password) =>
-	instance.post('/auth/register', {
+	instance.post(authEndPoints.register, {
 		name,
 		email,
 		password
 	})
 
-const logout = () => instance.delete('/auth/logout')
+const logout = () => instance.delete(authEndPoints.logout)
 
-const renewToken = () => instance.get('/auth/renewToken')
+const renewToken = () => instance.get(authEndPoints.renewToken)
 
 export default {
 	login,
 	register,
 	logout,
-	renewToken
+	renewToken,
+	authEndPoints
 }

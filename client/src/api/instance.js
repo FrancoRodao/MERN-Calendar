@@ -4,7 +4,7 @@ import axios from 'axios'
 import store from '../redux/store'
 import { startLogoutAction } from '../redux/actions/authActions'
 
-import authService from './auth'
+import AuthService from './auth'
 
 const instance = axios.create({
 	baseURL: process.env.API_URL,
@@ -20,7 +20,6 @@ instance.interceptors.request.use(config => {
 	return config
 })
 
-//TODO: check error handler
 function createAxiosResponseInterceptor() {
 	const interceptor = instance.interceptors.response.use(
 		response => response,
@@ -31,11 +30,6 @@ function createAxiosResponseInterceptor() {
 				return
 			}
 
-			// Reject promise if usual error
-			if (error.response.status !== 401) {
-				return Promise.reject(error)
-			}
-
 			/*
 			 * When response code is 401, try to refresh the token.
 			 * Eject the interceptor so it doesn't loop in case
@@ -43,8 +37,16 @@ function createAxiosResponseInterceptor() {
 			 */
 			instance.interceptors.response.eject(interceptor)
 
-			return authService
-				.renewToken()
+			//HANDLE ERROR IN THUNK
+			if (
+				error.response.config.url === AuthService.authEndPoints.login ||
+				error.response.config.url === AuthService.authEndPoints.register ||
+				error.response.status !== 401
+			) {
+				return Promise.reject(error)
+			}
+
+			return AuthService.renewToken()
 				.then(res => {
 					const token = res.data.accessToken
 					error.response.config.Authorization = `Bearer ${token}`
@@ -52,10 +54,9 @@ function createAxiosResponseInterceptor() {
 					return instance(error.response.config)
 				})
 				.catch(err => {
-					if (err.response.status === 401) {
-						toast.error('Try to re-authenticate')
-						store.dispatch(startLogoutAction())
-					}
+					//invalid refresh token
+					toast.error('Try to re-authenticate')
+					store.dispatch(startLogoutAction())
 
 					return Promise.reject(err)
 				})

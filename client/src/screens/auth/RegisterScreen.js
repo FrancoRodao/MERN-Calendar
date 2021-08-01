@@ -40,7 +40,7 @@ export default function RegisterScreen() {
 	return (
 		<div className="auth">
 			<div className="auth__container">
-				{/*error messages*/ state && <div> {msg} </div>}
+				{/*error messages*/ state && <div className="auth__error"> {msg} </div>}
 
 				<div className="auth__imgContainer">
 					<img src="../../../public/img/candado.png"></img>
