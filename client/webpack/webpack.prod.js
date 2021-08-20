@@ -24,22 +24,6 @@ const webpackProdConfig = {
 		extensions: ['.js'],
 		modules: ['node_modules']
 	},
-	externals: [
-		'react',
-		'redux',
-		'react-redux',
-		'fullcalendar/react',
-		'fullcalendar/daygrid',
-		'fullcalendar/list',
-		'fullcalendar/timegrid',
-		'react-datetime-picker',
-		'axios',
-		'redux',
-		'react-dom',
-		'toastify',
-		'redux-thunk',
-		'thunk'
-	],
 	optimization: {
 		minimize: true,
 		splitChunks: {
