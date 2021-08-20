@@ -147,6 +147,7 @@ export default function CalendarScreen() {
 						selectable={!isMobileDevice}
 						dateClick={dateClickHandler}
 						allDaySlot={false}
+						allDayText="All day"
 						viewDidMount={onViewChangeHandler}
 						headerToolbar={{
 							start: 'prev,today,next',
