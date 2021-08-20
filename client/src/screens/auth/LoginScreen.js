@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify'
 import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useState } from 'react'
@@ -20,6 +21,8 @@ export default function LoginScreen() {
 		const { email, password } = formValues
 		dispatch(startLoginAction(email, password))
 	}
+
+	const handleForgotPassword = e => toast.info('Coming soon...')
 
 	const [vissiblePassword, setVissiblePassword] = useState(false)
 
@@ -79,7 +82,9 @@ export default function LoginScreen() {
 					</button>
 				</form>
 
-				<button className="auth__forgot">Forgot password?</button>
+				<button onClick={handleForgotPassword} className="auth__forgot">
+					Forgot password?
+				</button>
 
 				<div className="auth__newaccount">
 					<p>Don´t have an account?</p>{' '}
