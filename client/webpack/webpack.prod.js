@@ -20,8 +20,8 @@ const webpackProdConfig = {
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css',
 			chunkFilename: '[id].[contenthash].css'
-		}),
-		new BundleAnalyzerPlugin({})
+		})
+		// new BundleAnalyzerPlugin({})
 	],
 	resolve: {
 		extensions: ['.js'],
