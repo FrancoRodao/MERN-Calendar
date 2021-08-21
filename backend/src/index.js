@@ -42,3 +42,9 @@ app.use('/api/events', require('./routes/events'))
 app.listen(process.env.PORT || 5000, () => {
 	console.log('Server on port', process.env.PORT || 5000)
 })
+
+if (process.env.NODE_ENV == 'production') {
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, '../dist', 'index.html'))
+	})
+}
