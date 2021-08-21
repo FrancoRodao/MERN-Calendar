@@ -32,7 +32,7 @@ app.use(
 		origin: origins
 	})
 )
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(path.join(__dirname, '../dist')))
 app.use(express.json())
 app.use(cookieParser())
 
