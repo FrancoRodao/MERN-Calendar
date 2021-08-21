@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify'
 import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { startLoginAction } from '../../redux/actions/authActions'
 import { useForm } from '../../hooks/useForm'

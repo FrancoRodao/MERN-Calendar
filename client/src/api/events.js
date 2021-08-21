@@ -22,7 +22,7 @@ const editEvent = ({ title, notes, startDate, endDate }, eventId) =>
 
 const deleteEvent = eventId => instance.delete(`/events/${eventId}`)
 
-export default {
+export const EventsService = {
 	getAllEvents,
 	getEvent,
 	createEvent,

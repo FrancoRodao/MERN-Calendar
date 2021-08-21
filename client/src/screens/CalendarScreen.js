@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import FullCalendar from '@fullcalendar/react' //must go before plugins
 // eslint-disable-next-line import/order

@@ -2,6 +2,8 @@ const path = require('path')
 const { merge } = require('webpack-merge')
 const webpackCommon = require('./webpack.common')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const BundleAnalyzerPlugin =
+	require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 /** @type {import('webpack').Configuration} */
 const webpackProdConfig = {
@@ -18,7 +20,8 @@ const webpackProdConfig = {
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css',
 			chunkFilename: '[id].[contenthash].css'
-		})
+		}),
+		new BundleAnalyzerPlugin({})
 	],
 	resolve: {
 		extensions: ['.js'],

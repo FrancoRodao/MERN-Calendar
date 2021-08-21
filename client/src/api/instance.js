@@ -4,7 +4,7 @@ import axios from 'axios'
 import store from '../redux/store'
 import { startLogoutAction } from '../redux/actions/authActions'
 
-import AuthService from './auth'
+import { AuthService } from './auth'
 
 const instance = axios.create({
 	baseURL: process.env.API_URL,

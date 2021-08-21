@@ -1,6 +1,6 @@
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import RegisterScreen from '../screens/auth/RegisterScreen'

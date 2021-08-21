@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 
 import DateTimePicker from 'react-datetime-picker'
-import React from 'react'
 
 import Modal from '../Modal'
 import {

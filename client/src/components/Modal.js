@@ -1,13 +1,12 @@
 import { useDispatch } from 'react-redux'
-import ReactDOM from 'react-dom'
-import React from 'react'
+import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 
 import styles from '../styles/components/modal/Modal.module.css'
 import { closeModalAction } from '../redux/actions/uiActions'
 
 const ModalPortal = ({ children }) =>
-	ReactDOM.createPortal(children, document.getElementById('modal-root'))
+	createPortal(children, document.getElementById('modal-root'))
 
 export default function Modal({ isOpen, children }) {
 	const dispatch = useDispatch()

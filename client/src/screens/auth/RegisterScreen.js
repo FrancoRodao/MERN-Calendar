@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { setErrorAction } from '../../redux/actions/uiActions'
 import { startRegisterUser } from '../../redux/actions/authActions'

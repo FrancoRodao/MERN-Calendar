@@ -1,7 +1,7 @@
 import { types } from '../types'
 
 import { errorMessages } from '../../helpers/messages'
-import AuthService from '../../api/auth'
+import { AuthService } from '../../api/auth'
 
 import { setErrorAction } from './uiActions'
 

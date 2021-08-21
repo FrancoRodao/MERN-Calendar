@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux'
-import React from 'react'
 
 import { startLogoutAction } from '../../redux/actions/authActions'
 import '../../styles/components/ui/NavBar.css'

@@ -1,6 +1,6 @@
 import { BrowserRouter, withRouter } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { startCheckingAction } from '../redux/actions/authActions'
 

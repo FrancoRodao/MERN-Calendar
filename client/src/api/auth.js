@@ -24,7 +24,7 @@ const logout = () => instance.delete(authEndPoints.logout)
 
 const renewToken = () => instance.get(authEndPoints.renewToken)
 
-export default {
+export const AuthService = {
 	login,
 	register,
 	logout,

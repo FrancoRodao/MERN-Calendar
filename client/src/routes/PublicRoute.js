@@ -1,5 +1,4 @@
 import { Route, Redirect } from 'react-router-dom'
-import React from 'react'
 import PropTypes from 'prop-types'
 
 export default function PublicRoute({

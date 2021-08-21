@@ -15,7 +15,7 @@ const webpackDevConfig = {
 		port: 8080,
 		historyApiFallback: true
 	},
-	plugins: [new ReactRefreshWebpackPlugin(), new BundleAnalyzerPlugin({})],
+	plugins: [new ReactRefreshWebpackPlugin()],
 	target: 'web' //webpack-server bug (hot reload will stop working without this option)
 }
 

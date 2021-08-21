@@ -1,6 +1,6 @@
 import { types } from '../types'
 import { errorMessages } from '../../helpers/messages'
-import EventsService from '../../api/events'
+import { EventsService } from '../../api/events'
 
 import { setErrorAction } from './uiActions'
 
