@@ -2,6 +2,8 @@
 
 Un calendario hecho con el stack mern
 
+[Ultima version desplegada](https://mern-calendar-backend-prod.herokuapp.com/)
+
 ## Setup
 
 1. Entrar a la carpeta client y ejecutar el comando `npm install` para instalar los modulos, repetir el paso en la carpeta backend
