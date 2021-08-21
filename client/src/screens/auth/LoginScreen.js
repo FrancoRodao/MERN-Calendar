@@ -5,6 +5,8 @@ import React, { useState } from 'react'
 
 import { startLoginAction } from '../../redux/actions/authActions'
 import { useForm } from '../../hooks/useForm'
+
+import candadoImg from '../../../public/img/candado.png'
 import '../../styles/screens/auth/auth.css'
 
 export default function LoginScreen() {
@@ -35,7 +37,7 @@ export default function LoginScreen() {
 				{/*error message*/ state && <div className="auth__error"> {msg} </div>}
 
 				<div className="auth__imgContainer">
-					<img src="../../../public/img/candado.png"></img>
+					<img src={candadoImg}></img>
 				</div>
 				<form onSubmit={handleSubmitForm} className="auth__form">
 					<div className="auth__form__container">

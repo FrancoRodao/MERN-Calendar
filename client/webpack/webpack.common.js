@@ -69,6 +69,10 @@ module.exports = {
 					},
 					{ loader: 'postcss-loader' }
 				]
+			},
+			{
+				test: /\.png/,
+				type: 'asset/resource'
 			}
 		]
 	}

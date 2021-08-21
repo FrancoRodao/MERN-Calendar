@@ -10,6 +10,8 @@ import '../../styles/screens/auth/auth.css'
 import '../../styles/screens/auth/RegisterScreen.css'
 import { errorMessages } from '../../helpers/messages'
 
+import candadoImg from '../../../public/img/candado.png'
+
 export default function RegisterScreen() {
 	const { state, msg } = useSelector(state => state.ui.error)
 	const dispatch = useDispatch()
@@ -43,7 +45,7 @@ export default function RegisterScreen() {
 				{/*error messages*/ state && <div className="auth__error"> {msg} </div>}
 
 				<div className="auth__imgContainer">
-					<img src="../../../public/img/candado.png"></img>
+					<img src={candadoImg}></img>
 				</div>
 
 				<form
