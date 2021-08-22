@@ -3,13 +3,25 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import RegisterScreen from '../screens/auth/RegisterScreen'
-import LoginScreen from '../screens/auth/LoginScreen'
-import CalendarScreen from '../screens/CalendarScreen'
+import loadable from '@loadable/component'
+
+const RegisterScreen = loadable(
+	() => import('../screens/auth/RegisterScreen'),
+	{
+		fallback: <Loading />
+	}
+)
+const LoginScreen = loadable(() => import('../screens/auth/LoginScreen'), {
+	fallback: <Loading />
+})
+const CalendarScreen = loadable(() => import('../screens/CalendarScreen'), {
+	fallback: <Loading />
+})
 
 import { clearErrorAction } from '../redux/actions/uiActions'
 
 import PageNotFound from '../components/PageNotFound'
+import Loading from '../components/Loading'
 
 import PublicRoute from './PublicRoute'
 import PrivateRoute from './PrivateRoute'
@@ -25,7 +37,7 @@ export default function Wrapper() {
 	const isAuthenticated = !checking && uid != null
 
 	if (checking) {
-		return <div>Wait please...</div>
+		return <Loading />
 	}
 
 	return (
