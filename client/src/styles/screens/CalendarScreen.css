@@ -1,3 +1,88 @@
+/* datapicker */
+.react-datetime-picker__wrapper {
+	border: none;
+}
+.react-datetime-picker__inputGroup__amPm {
+	outline: transparent;
+}
+/* datapicker */
+
+/* FULL CALENDAR */
+
+:root {
+	--fc-list-event-hover-bg-color: transparent;
+}
+
+.fc-h-event {
+	background-color: #2a6bb5;
+	border: medium solid transparent;
+}
+
+.fc-v-event {
+	background-color: #2a6bb5;
+}
+
+.fc-daygrid-event-dot {
+	border-color: #0ac200;
+}
+
+.fc-toolbar-chunk > .fc-button {
+	padding: 0.5rem 1.1rem;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.fc .fc-button-primary:not(:disabled):active,
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+	background-color: #1863e6;
+	border-color: #165edb;
+}
+
+.fc .fc-button-primary,
+.fc .fc-button-primary:focus {
+	background-color: #4582ec;
+	border-color: #4582ec;
+	margin-right: 5px;
+	box-shadow: none;
+}
+
+.fc .fc-button-primary:disabled {
+	background-color: #4582ec;
+	border-color: #4582ec;
+}
+
+.fc .fc-button-primary:hover,
+.fc-button-active {
+	background-color: #1863e6;
+	border-color: #165edb;
+}
+
+.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
+	margin-left: 5px;
+}
+
+.fc .fc-button-primary:not(:disabled):active:focus,
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus {
+	box-shadow: none;
+}
+
+.selectedEvent,
+.selectedEvent:hover {
+	background-color: #0093fc;
+	transition: 0.2s;
+	z-index: 99999 !important;
+}
+
+@media (max-width: 760px) {
+	.fc .fc-toolbar-title {
+		font-size: 21px;
+	}
+}
+
+/* FULL CALENDAR */
+
 .calendar__root {
 	overflow-y: scroll;
 	height: 100%;
