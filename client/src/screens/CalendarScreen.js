@@ -51,14 +51,25 @@ export default function CalendarScreen() {
 		selectEvent(e)
 	}
 
-	const eventDropHandler = ({ event }) => {
+	const eventDropHandler = e => {
+		const { event, oldEvent } = e
+
 		const eventEdited = {
+			id: event.id,
 			title: event.title,
 			notes: event.extendedProps.notes,
 			startDate: event.start,
 			endDate: event.end
 		}
-		dispatch(startEditEventAction(eventEdited, event.id))
+		const _oldEvent = {
+			id: oldEvent.id,
+			title: oldEvent.title,
+			notes: oldEvent.extendedProps.notes,
+			startDate: oldEvent.start,
+			endDate: oldEvent.end
+		}
+
+		dispatch(startEditEventAction(_oldEvent, eventEdited, event.id))
 	}
 
 	const dateClickHandler = e => {
@@ -98,18 +109,14 @@ export default function CalendarScreen() {
 		const allEvents = document.querySelectorAll(
 			`[data-event-id="${activeEvent.id}"]`
 		)
-		allEvents.forEach(event => {
-			event.classList.remove('selectedEvent')
-		})
+		allEvents.forEach(event => event.classList.remove('selectedEvent'))
 	}
 
 	const selectEvent = fullCalendarEvent => {
 		const allEvents = document.querySelectorAll(
 			`[data-event-id="${fullCalendarEvent.el.dataset.eventId}"]`
 		)
-		allEvents.forEach(event => {
-			event.classList.add('selectedEvent')
-		})
+		allEvents.forEach(event => event.classList.add('selectedEvent'))
 	}
 
 	const isMobileDevice = screen.width < 768

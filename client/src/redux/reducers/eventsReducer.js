@@ -35,9 +35,9 @@ export const eventsReducer = (state = initialState, action) => {
 		case types.eventEdit:
 			return {
 				...state,
-				events: state.events.map(e =>
-					e.id === action.payload.event.id ? action.payload.event : e
-				)
+				events: state.events.map(e => {
+					return e.id === action.payload.event.id ? action.payload.event : e
+				})
 			}
 
 		case types.eventDelete:

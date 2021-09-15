@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify'
+
 import { types } from '../types'
 import { errorMessages } from '../../helpers/messages'
 import { EventsService } from '../../api/events'
@@ -53,11 +55,26 @@ export const addNewEventAction = event => ({
 	}
 })
 
-export const startEditEventAction = (eventEdited, eventId) => {
+export const startEditEventAction = (oldEvent, eventEdited, eventId) => {
 	return dispatch => {
-		EventsService.editEvent(eventEdited, eventId)
-			.then(res => dispatch(editEventAction(res.data.event)))
-			.catch(err => err)
+		/*
+			you should have the events synced with the local state
+			(at least when editing the event) NOT with the backend 
+			state because otherwise the events are duplicated 
+			(fullcalendar drop event bug)
+			https://github.com/fullcalendar/fullcalendar-react/issues/120
+		*/
+		EventsService.editEvent(eventEdited, eventId).catch(err => {
+			//401 --> refreshing token
+			if (err.response.status !== 401) {
+				console.log(err.response)
+				toast.error('An error occurred while editing the event')
+				//return to the previous state if an error occurs
+				dispatch(editEventAction(oldEvent))
+			}
+			return
+		})
+		dispatch(editEventAction(eventEdited))
 	}
 }
 
