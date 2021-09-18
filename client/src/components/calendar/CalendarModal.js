@@ -30,7 +30,9 @@ export default function CalendarModal() {
 	const handleSubmitForm = e => {
 		e.preventDefault()
 		if (activeEvent) {
-			dispatch(startEditEventAction(modalFormValues, activeEvent.id))
+			dispatch(
+				startEditEventAction(activeEvent, modalFormValues, activeEvent.id)
+			)
 		} else {
 			dispatch(startAddNewEventAction(modalFormValues))
 		}

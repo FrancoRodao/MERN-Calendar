@@ -71,7 +71,7 @@
 .selectedEvent,
 .selectedEvent:hover {
 	background-color: #0093fc;
-	transition: 0.2s;
+	transition: background-color 0.3s;
 	z-index: 99999 !important;
 }
 

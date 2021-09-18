@@ -41,7 +41,6 @@ export default function CalendarScreen() {
 
 	const eventClickHandler = e => {
 		dispatch(setActiveEventAction(e.event))
-
 		//remove styles to selected event
 		if (activeEvent) {
 			unSelectEvent()
@@ -55,14 +54,12 @@ export default function CalendarScreen() {
 		const { event, oldEvent } = e
 
 		const eventEdited = {
-			id: event.id,
 			title: event.title,
 			notes: event.extendedProps.notes,
 			startDate: event.start,
 			endDate: event.end
 		}
 		const _oldEvent = {
-			id: oldEvent.id,
 			title: oldEvent.title,
 			notes: oldEvent.extendedProps.notes,
 			startDate: oldEvent.start,
@@ -79,7 +76,7 @@ export default function CalendarScreen() {
 			unSelectEvent()
 		}
 
-		if (isDoubleClick(e)) {
+		if (!isMobileDevice && isDoubleClick(e)) {
 			dispatch(openModalAction())
 		}
 	}

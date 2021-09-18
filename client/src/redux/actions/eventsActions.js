@@ -74,14 +74,17 @@ export const startEditEventAction = (oldEvent, eventEdited, eventId) => {
 			}
 			return
 		})
-		dispatch(editEventAction(eventEdited))
+		dispatch(editEventAction(eventEdited, eventId))
 	}
 }
 
-export const editEventAction = event => ({
+export const editEventAction = (event, eventId) => ({
 	type: types.eventEdit,
 	payload: {
-		event
+		event: {
+			id: eventId,
+			...event
+		}
 	}
 })
 
