@@ -23,7 +23,7 @@ dbConnection()
 //config - middlewares
 const origins = [
 	'http://localhost:8080',
-	'https://mern-calendar-backend-prod.herokuapp.com/'
+	'mern-calendar-production-9c8f.up.railway.app'
 ]
 app.use(helmet())
 app.use(

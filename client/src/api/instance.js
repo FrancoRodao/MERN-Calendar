@@ -54,6 +54,7 @@ function createAxiosResponseInterceptor() {
 					return instance(error.response.config)
 				})
 				.catch(err => {
+					console.log(err.response)
 					//invalid refresh token
 					toast.error('Try to re-authenticate')
 					store.dispatch(startLogoutAction())

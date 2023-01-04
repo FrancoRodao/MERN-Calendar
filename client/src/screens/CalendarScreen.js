@@ -28,6 +28,9 @@ import CalendarEvent from '../components/calendar/CalendarEvent'
 import '../styles/screens/CalendarScreen.css'
 
 export default function CalendarScreen() {
+	//TODO: CHECK BUG TRY TO RE AUTENCIRCATE
+	//TODO: OPTIMIZE DBLCLICKS EVENTS
+	//TODO: DEPLOY HEROKU
 	const dispatch = useDispatch()
 	const { events, activeEvent } = useSelector(state => state.events)
 

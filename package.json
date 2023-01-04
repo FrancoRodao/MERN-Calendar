@@ -7,8 +7,10 @@
 		"client"
 	],
 	"scripts": {
+		"client:build": "cd client && npm install && npm run build",
 		"client:dev": "npm run dev --workspace=client",
-		"backend:dev": "npm run dev --workspace=backend"
+		"backend:dev": "npm run dev --workspace=backend",
+		"backend:start": "cd backend && npm install && npm run start"
 	},
 	"license": "ISC",
 	"engines": {

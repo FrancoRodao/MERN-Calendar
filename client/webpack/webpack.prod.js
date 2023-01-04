@@ -10,7 +10,7 @@ const webpackProdConfig = {
 	mode: 'production',
 	devtool: false,
 	output: {
-		path: path.resolve(__dirname, '../dist'),
+		path: path.resolve(__dirname, '../../backend/dist'),
 		publicPath: '',
 		filename: '[name].[contenthash].js',
 		chunkFilename: '[name].[contenthash].js',

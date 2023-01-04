@@ -20,7 +20,6 @@ module.exports = {
 	entry: {
 		main: path.resolve(__dirname, '../src/index.js')
 	},
-	devtool: 'source-map',
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: 'public/index.html',
