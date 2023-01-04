@@ -2,7 +2,7 @@
 
 Un calendario hecho con el stack mern
 
-[Ultima version desplegada](https://mern-calendar-backend-prod.herokuapp.com/)
+[Ultima version desplegada](https://mern-calendar-pmix.onrender.com/) (Puede demorar 5 minutos en cargar la primera vez)
 
 ## Setup
 
