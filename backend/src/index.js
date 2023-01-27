@@ -23,7 +23,8 @@ dbConnection()
 //config - middlewares
 const origins = [
 	'http://localhost:8080',
-	'mern-calendar-production-9c8f.up.railway.app'
+	'mern-calendar-production-9c8f.up.railway.app',
+	'https://mern-calendar-pmix.onrender.com'
 ]
 app.use(helmet())
 app.use(
